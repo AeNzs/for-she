@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untukmu ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Georgia",
+    "Times New Roman",
+    "Microsoft YaHei",
+    serif;
+
+    background:linear-gradient(
+        -45deg,
+        #0f172a,
+        #1e293b,
+        #334155,
+        #111827
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 20s ease infinite;
+
+    color:white;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+@keyframes bgMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+/* =======================
+   Background
+======================= */
+.moon{
+
+position:fixed;
+
+top:70px;
+
+right:90px;
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:#fff8dc;
+animation:moonFloat 8s ease-in-out infinite;
+box-shadow:
+0 0 80px #fff5cc,
+0 0 150px rgba(255,255,255,.3);
+
+opacity:.85;
+
+z-index:-2;
+
+}@keyframes moonFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:blink 3s infinite;
+
+}
+
+@keyframes blink{
+
+0%,100%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* =======================
+   Layout
+======================= */
+
+.container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.card{
+
+    width:min(950px,92vw);
+
+    max-height:88vh;
+
+    overflow-y:auto;
+
+    background:rgba(255,255,255,.07);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    padding:65px;
+
+    text-align:center;
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.45);
+
+    animation:fade .8s;
+
+}
+/* Scroll */
+
+.card::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.card::-webkit-scrollbar-thumb{
+
+background:#888;
+
+border-radius:20px;
+
+}
+
+.card::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+h1{
+
+font-size:58px;
+
+margin-bottom:10px;
+
+}
+
+h2{
+
+    font-size:34px;
+
+    font-weight:300;
+
+    margin-bottom:10px;
+
+    color:#ffd7d7;
+
+}
+h3{
+
+font-size:17px;
+
+font-weight:300;
+
+margin-bottom:35px;
+
+color:#ffd7d7;
+
+}
+#typing{
+
+white-space:pre-line;
+
+text-align:center;
+
+font-size:23px;
+
+line-height:2.15;
+
+max-width:760px;
+
+margin:auto;
+
+color:#f8f8f8;
+
+}
+
+.signature{
+
+margin-top:35px;
+
+font-size:22px;
+
+letter-spacing:5px;
+
+color:#ffd6d6;
+
+font-family:Georgia,serif;
+
+}
+
+.footer{
+
+margin-top:35px;
+
+font-style:italic;
+
+line-height:1.8;
+
+opacity:.75;
+
+color:#e5e5e5;
+
+}
+
+button{
+
+margin-top:45px;
+
+padding:16px 45px;
+
+font-size:18px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff5e7a,#ff8fb0);
+
+color:white;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 10px 25px rgba(255,105,135,.45);
+
+}
+
+.heart{
+
+position:fixed;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px)
+scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+#typing::after{
+
+content:"|";
+
+animation:cursor .8s infinite;
+
+}
+
+@keyframes cursor{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+#landing{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(6px);
+
+animation:fade .8s;
+
+z-index:999;
+
+}
+
+.openBtn{
+
+margin-top:40px;
+
+padding:18px 55px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff6484,#ff9ab5);
+
+color:white;
+
+transition:.35s;
+
+}
+
+.openBtn:hover{
+
+transform:scale(1.05);
+
+}
+@media(max-width:768px){
+
+.card{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+#typing{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<body>
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<div id="landing">
+
+<div style="font-size:90px;">
+💌
+</div>
+
+<h1>Untuk Seseorang</h1>
+
+<p style="margin-top:25px;font-size:22px;line-height:1.8;">
+Ada sebuah surat
+yang telah lama
+menunggumu.
+</p>
+
+<button class="openBtn" onclick="openLetter()">
+Buka Surat
+</button>
+
+</div>
+
+<div class="container">
+
+<div id="letter" style="display:none;">
+
+<div class="card">
+
+<h1>❤️</h1>
+
+<h2>Untuk Pujaan Hatiku</h2>
+<h3>温雪瑞</h3>
+
+
+
+<div id="typing"></div>
+
+<button onclick="love()">
+
+💌
+
+</button>
+
+
+<div class="footer">
+
+“If I truly love one person I love all persons, I love the world, I love life. If I can say to somebody else, "I love you," I must be able to say, "I love in you everybody, I love through you the world, I love in you also myself.”
+
+</div>
+<div class="signature">
+
+― Erich Fromm, The Art of Loving
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+const text=`Tak pernah ku sangka ku bisa menemukan cinta ku di sebuah tempat yang menjadi tempat banyak kemungkinan bisa terjadi.
+
+Tempat yang biasanya dipakai untuk diam diam memainkan handphone, menyelundupkan makanan, membuang sampah kertas,dan tempat menyimpan botol minum.
+
+Aku tidak pernah menyangka bahwa tempat itu justru menjadi penghubung diriku dengan dirimu.
+
+Sungguh tidak pernah terlintas di pikiranku bahwa sebuah pertemuan yang sederhana bisa berubah menjadi kenangan yang begitu berarti.
+
+Dan begitulah kisahku mengenalimu dimulai.
+
+Entah kamu menyadarinya atau tidak,
+kehadiranmu membuat hari-hari yang biasa terasa sedikit lebih hangat.
+
+Terima kasih telah menjadi bagian dari cerita yang mungkin sederhana,
+namun akan selalu memiliki tempat di dalam ingatanku.`;
+
+let i=0;
+
+function typing(){
+
+    if(i<text.length){
+
+        document.getElementById("typing").textContent += text.charAt(i);
+
+        i++;
+
+        setTimeout(typing,35);
+
+    }
+
+}
+
+function openLetter(){
+
+document.getElementById("landing").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+const bgm=document.getElementById("bgm");
+
+bgm.volume=0;
+
+bgm.play().catch(()=>{});
+
+let vol=0;
+
+const fade=setInterval(()=>{
+
+    if(vol>=0.35){
+
+        clearInterval(fade);
+
+    }else{
+
+        vol+=0.02;
+
+        bgm.volume=vol;
+
+    }
+
+},150);
+
+typing();
+
+}
+function love(){
+
+    for(let i=0;i<35;i++){
+
+        const h=document.createElement("div");
+
+        h.className="heart";
+
+        const hearts=[
+"❤️",
+"💖",
+"💕",
+"💗",
+"💓",
+"💞"
+];
+
+h.innerHTML=
+hearts[Math.floor(Math.random()*hearts.length)];
+
+        h.style.left=Math.random()*100+"vw";
+
+        h.style.top="-30px";
+
+        h.style.animationDuration=(3+Math.random()*3)+"s";
+
+        document.body.appendChild(h);
+
+        setTimeout(()=>{
+
+            h.remove();
+
+        },6000);
+
+    }
+
+}
+
+for(let i=0;i<180;i++){
+
+    const s=document.createElement("div");
+
+    s.className="star";
+
+    s.style.left=Math.random()*100+"vw";
+
+    s.style.top=Math.random()*100+"vh";
+
+    s.style.animationDelay=Math.random()*3+"s";
+
+    document.querySelector(".stars").appendChild(s);
+
+}
+
+</script>
+<audio id="bgm" loop>
+    <source src="music/01 - ELLIOT JAMES REAY - I Think They Call This Love.mp3" type="audio/mpeg">
+</audio>
+</body>
+
+</html>
